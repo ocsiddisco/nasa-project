@@ -10,16 +10,24 @@ on:
     branches: [main]
 jobs:
   build:
+    # let create react app know that the script is being use in CI environment and will disable the "watch mode" from the tests (won't quit tests otherwise)
+    env:
+      CI: true
+    # to test build in different environment
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
     runs-on: windows-latest
     steps:
       # the following actions (uses) are scripts made available for users on github actions
       - uses: actions/checkout@v2
-      - name: use Node.js version 18
+      - name: use Node.js version ${{ matrix.node-version}}
         uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: ${{ matrix.node-version}}
       - run: npm install
       - run: npm run build --prefix client
+      - run: npm test
   # needs build means it will deploy only if build's succeded
   # deploy:
   #   needs: build
