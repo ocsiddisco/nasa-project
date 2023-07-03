@@ -17,8 +17,8 @@ jobs:
     # to test build in different environment
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        mongodb-version: ["4.2", "4.4", "6.0"]
+        node-version: [116.x, 18.x]
+        mongodb-version: ["4.4", "6.0"]
     #for meself TO DO: runs on with mongodb not working with windows (supercharge only works on linux)
     runs-on: ubuntu-latest
     steps:
