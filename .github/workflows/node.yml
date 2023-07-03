@@ -19,7 +19,8 @@ jobs:
       matrix:
         node-version: [14.x, 16.x, 18.x]
         mongodb-version: ["6.6"]
-    runs-on: windows-latest
+    #for meself TO DO: runs on with mongodb not working with windows (supercharge only works on linux)
+    runs-on: ubuntu-latest
     steps:
       # the following actions (uses) are scripts made available for users on github actions
       - uses: actions/checkout@v2
