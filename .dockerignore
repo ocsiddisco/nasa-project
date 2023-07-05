@@ -1,0 +1,8 @@
+# similar to gitignore. files will be ignore when copying the code.
+
+.git
+
+*/node_modules
+
+# it will be created directly in the docker container with the npm i
+server/public
