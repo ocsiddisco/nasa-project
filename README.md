@@ -42,6 +42,6 @@ There are many things I do not know, but one step at a time, I keep going furthe
 
 <p align='center'>
 
-   <img src="/Images/architecture.png">
+   <img src="images/architecture.png">
 
 </p>
